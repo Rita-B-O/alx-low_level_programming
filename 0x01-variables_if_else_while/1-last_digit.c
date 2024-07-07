@@ -3,24 +3,31 @@
 #include <stdio.h>
 
 /**
- * main - entry point
- *
- * Description: locate last digit of random number
- * Return: always 0 (Success)
+ *  * main - Entry point
+ *   *
+ *    * Description: Print the last digit of a random number and indicate
+ *     * whether it is greater than 5, 0, or less than 6 but not 0.
+ *      *
+ *       * Return: Always 0 (Success)
  */
 int main(void)
 {
-	int n;
+int n;
+int last_digit;
 
-	srand(time(0));
-	n = rand() - RAND_MAX / 2;
-	printf("Last digit of %d", n);
-	printf(" is %d ", n % 10);
-	if ((n % 10) > 5)
-		printf("and is greater than %d\n", 5);
-	else if ((n % 10) == 0)
-		printf("and is %d\n", 0);
-	else
-		printf("and is less than %d and not %d\n", 6, 0);
-	return (0);
+srand(time(0));
+n = rand() - RAND_MAX / 2;
+last_digit = n % 10;
+
+printf("Last digit of %d is %d ", n, last_digit);
+
+if (last_digit > 5)
+printf("and is greater than 5\n");
+else if (last_digit == 0)
+printf("and is 0\n");
+else
+printf("and is less than 6 and not 0\n");
+
+return (0);
 }
+
